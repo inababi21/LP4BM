@@ -85,8 +85,13 @@ class Cliente (Pessoa):
             except ValueError:
               print("   OPA! Somente numeros são permitido neste campo (CPF), tente novamente   ")
               break
-            tel = input('Telefone: ')
-            self.tel = tel
+              
+            try:
+              tel = int(input('Telefone: '))
+              self.tel = tel
+            except ValueError:
+              print("APENAS NUMEROS SÃO PERMITIDOS NESTE CAMPO (TEL), tente novamente!!")
+              break
             endereco=input('Endereço: ')
             self.endereco= endereco
             if senha == senha2:
